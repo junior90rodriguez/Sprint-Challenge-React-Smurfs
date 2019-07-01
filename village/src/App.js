@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from "axios";
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router-dom';
 
 import './App.css';
 import SmurfForm from './components/SmurfForm';
@@ -14,6 +14,8 @@ class App extends React.Component {
     };
   }
 
+  
+
   componentDidMount() {
     axios
     .get("http://localhost:3333/smurfs")
@@ -24,8 +26,7 @@ class App extends React.Component {
   addSmurf = smurf => {
     axios 
     .post("http://localhost:3333/smurfs", smurf)
-    .then(response => this.setState({ smurfs: response.data }));
-    this.props.history.push("/")
+    .then(response =>{this.setState({ smurfs: response.data }); this.props.history.push("/")})
     .catch(error => console.log(error))
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -49,4 +50,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);
