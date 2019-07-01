@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from "axios";
 
 import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
