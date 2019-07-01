@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './SmurfForm.css';
+
 class SmurfForm extends React.Component {
   state= {
       smurf: {
@@ -42,6 +44,7 @@ class SmurfForm extends React.Component {
   render() {
     return (
       <div className="SmurfForm">
+      <h1>Add New Smurf</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             onChange={this.changeHandler}
