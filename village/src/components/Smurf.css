@@ -1,0 +1,12 @@
+.Smurfs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Chewy', cursive;
+    font-size: 6rem;
+    color: white;
+    text-shadow: 3px 3px dodgerblue;
+}
